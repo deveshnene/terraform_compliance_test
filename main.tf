@@ -15,12 +15,20 @@ resource "google_storage_bucket" "log_bucket" {
 resource "google_storage_bucket" "log_bucket2" {
   name = "log-bucket-2"
   location = "ASIA-SOUTH1"
+  retention_policy {
+    is_locked = true
+    retention_period = 864000
+  }
 }
 
 resource "google_storage_bucket" "log_bucket3" {
   name = "log-bucket-3"
   location = "ASIA-SOUTH1"
   enable_object_retention = true
+  retention_policy {
+    is_locked = true
+    retention_period = 864000
+  }
 }
 
 resource "google_storage_bucket" "log_bucket4" {
