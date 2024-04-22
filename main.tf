@@ -40,3 +40,6 @@ resource "google_storage_bucket" "log_bucket4" {
   }
 }
 
+resource "google_bigquery_dataset" "dataset" {
+    dataset_id = "dataset"
+}
